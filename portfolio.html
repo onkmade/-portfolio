@@ -1,1 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <link rel="stylesheet" href="/portfolio.css">
+    <link rel="stylesheet" href="port-skill.css">
+</head>
+<body>
+    <div class="top-one">
+    <section class="top-title"><a href="onkmade.com">onkmade.com/<span class="top-subtext">Your Workspace</a></span></section>
+    </div>
 
+    <section class="main-container">
+        <div class="profile-image"></div>
+        <div class="title">
+            <p class="heading"><span class="main-txt">Hi, I’m Aditya</span><span class="gray-text"> — a creative builder and your go-to workspace partner.</span></p>
+            <p class="sub-heading">I focus on making things simpler, cutting through clutter, <br>and designing solutions that let you focus on what truly matters.</p>
+        </div>
+
+
+        <!--   White Section-->
+        <div class="content-box">
+            <div class="centered-nav">
+            <nav class="navlist">
+                <li class="nav-links" id="about-me"><a href="#about-panel">About ME</a></li>
+                <li class="nav-links" id="Skills"><a href="#skills-panel">Skills</a></li>
+                <li class="nav-links" id="Projects"><a href="#projects-panel">Projects</a></li>
+                <li class="nav-links" id="Contact"><a href="#contact-panel">Contact</a></li>
+            </nav>
+            </div>
+
+            <div class="centered-panel">
+            <section class="about-panel">
+                <div class="gaus">
+                <div class="small-name">Hello Web Visitor</div>
+                <div class="My-name" id="about-panel">I'm Aditya<span class="astrik">*</span></div>
+                </div>
+
+                <section class="FAQ-panel">
+                <button class="Q-Ans" id="Q-Ans">Q & A</button>
+                <div class="answer-question">
+                    <div class="FAQ-heading">I'm here to answer all your Questions</div> 
+                    <p class="sub-heading">A few quick questions (and honest answers) about who I am and what I do, with a glimpse into my journey of learning web development, creating simple designs, and sharing the projects I’m working on.</p>
+                </div>
+                <div class="FAQ-section">
+                    <div class="faq-item">
+                        <button class="faq-quest">
+                            Who I am?
+                            <i class="toggle-icon" data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-ans">
+                            <p class="sub-heading ans">I’m Aditya, a learner and beginner web developer. I enjoy exploring creative UI ideas and keeping designs clean, simple, and easy to use.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-quest">
+                            What am I learning right now?
+                            <i class="toggle-icon" data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-ans">
+                            <p class="sub-heading ans">I’ve just started with HTML and CSS, and I’m slowly building my way up by experimenting with projects that challenge me to try new things.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-quest">
+                            Why this portfolio?
+                            <i class="toggle-icon" data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-ans">
+                            <p class="sub-heading ans">This portfolio is like my open journal - a place to showcase upcoming projects and share my growth as I learn and build more over time.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                </section>
+
+            </section>
+            </div>
+        </div>
+    </section>
+
+    <!--  SKILL CONTAINER-->
+    <section class="skills-panel" id="skills-panel">
+        <div class="skill-container">
+
+        <div class="heading">My Skills & Creative Tools</div>
+        <p class="sub-heading">The mix of things I’ve learned, use often, and keep experimenting with as I grow.</p>
+        <div class="skill-tab">
+            <div class="skill-title">Web Development</div>
+            <div class="skill-para">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Little Javascript</li>
+            </div>
+        </div>
+
+        <div class="skill-tab">
+            <div class="skill-title">Design & UI</div>
+            <div class="skill-para">
+                <li>Designing clean user interfaces</li>
+                <li>experimenting with layouts</li>
+                <li>UI-researching</li>
+            </div>
+        </div>
+        
+        <div class="skill-tab">
+            <div class="skill-title">Creative Side</div>
+            <div class="skill-para">
+                <li>Content creation</li>
+                <li>digital art</li>
+                <li>creative building</li>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqQuest = document.querySelectorAll('.faq-quest');
+
+                faqQuest.forEach(questions => {
+                    questions.addEventListener('click', ()=>{
+
+                        const answer = questions.nextElementSibling;
+                        const toggleIcon = questions.querySelector('.toggle-icon');
+
+                        const isActive = questions.classList.toggle('active');
+
+                        if (isActive) {
+                        answer.classList.add('show');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.classList.remove('show');
+                        answer.style.maxHeight = '0';
+                    }
+                    });
+                });
+
+                const qns = document.getElementById('Q-Ans');
+
+                qns.addEventListener('mouseover', () => {
+                    qns.textContent = 'Question and Answers';
+                });
+
+                qns.addEventListener('mouseout', () => {
+                    qns.textContent = 'Q & A';
+                });
+            });
+        </script>
+</body>
+</html>
